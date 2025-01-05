@@ -5,8 +5,8 @@ interface INavbarProps {}
 
 const Navbar: React.FunctionComponent<INavbarProps> = () => {
   return (
-    <nav className="flex justify-between items-center py-4">
-      <h3 className="text-md font-extralight">Application Tracker</h3>
+    <nav className="flex justify-between items-center py-4 px-4">
+      <h3 className="text-md font-extralight">ATracker</h3>
       <ul className="flex justify-end gap-4">
         <li className="">
           <NavLink

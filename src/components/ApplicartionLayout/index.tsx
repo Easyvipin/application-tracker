@@ -6,7 +6,7 @@ const ApplicationLayout: React.FunctionComponent<
   IApplicationLayoutProps
 > = ({}) => {
   return (
-    <div className="px-4 border">
+    <div className="px-4">
       <Outlet />
     </div>
   );
