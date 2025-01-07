@@ -8,8 +8,9 @@ const ApplicationList: React.FunctionComponent<IApplicationListProps> = ({
   list,
 }) => {
   return (
-    <div className="flex justify-center items-center py-4">
-      <ul className="flex flex-col gap-4 w-1/2">
+    <div className="flex flex-col gap-4 w-full rounded-xl">
+      <ul className="flex flex-col gap-4 w-full">
+
         {list.map((eachList) => (
           <li
             key={eachList.id}

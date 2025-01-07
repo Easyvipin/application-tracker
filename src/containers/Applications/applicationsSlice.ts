@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
 
 export interface Applications {
   id: string;
@@ -25,8 +26,15 @@ const initialState: Applications[] = [
 const applicationsSlice = createSlice({
   name: "applications",
   initialState,
-  reducers: {},
+
+  reducers: {
+    applicationAdded: (state, action: PayloadAction<Applications>) => {
+      state.push(action.payload);
+    },
+  },
 });
+
+export const { applicationAdded } = applicationsSlice.actions;
 
 const applicationsReducer = applicationsSlice.reducer;
 export default applicationsReducer;
