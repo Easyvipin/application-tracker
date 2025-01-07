@@ -8,6 +8,8 @@ import About from "./containers/About/index.tsx";
 import ApplicationLayout from "./components/ApplicartionLayout/index.tsx";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import Application from "./containers/Application/index.tsx";
+import NotFound from "./containers/NotFound/index.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -17,8 +19,10 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/" element={<App />}>
             <Route element={<ApplicationLayout />}>
               <Route path="applications" element={<Applications />} />
+              <Route path="application/:id" element={<Application />} />
             </Route>
             <Route path="about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
