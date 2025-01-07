@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
+
 export interface Applications {
   id: string;
   company: string;
@@ -25,6 +26,7 @@ const initialState: Applications[] = [
 const applicationsSlice = createSlice({
   name: "applications",
   initialState,
+
   reducers: {
     applicationAdded: (state, action: PayloadAction<Applications>) => {
       state.push(action.payload);
@@ -33,5 +35,6 @@ const applicationsSlice = createSlice({
 });
 
 export const { applicationAdded } = applicationsSlice.actions;
+
 const applicationsReducer = applicationsSlice.reducer;
 export default applicationsReducer;
