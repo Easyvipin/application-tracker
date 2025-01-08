@@ -17,8 +17,9 @@ const Application: React.FunctionComponent<IApplicationProps> = () => {
 
   return (
     <section>
-      <span>{application?.id}</span>
-      <h4 className="text-lg font-semibold">{application?.company}</h4>
+      <h4 className="text-lg font-semibold uppercase">
+        {application?.company}
+      </h4>
     </section>
   );
 };
