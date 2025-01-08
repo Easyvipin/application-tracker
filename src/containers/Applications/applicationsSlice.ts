@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
+import { RootState } from "../../store";
 
 export interface Applications {
   id: string;
@@ -31,10 +31,23 @@ const applicationsSlice = createSlice({
     applicationAdded: (state, action: PayloadAction<Applications>) => {
       state.push(action.payload);
     },
+    applicationUpdated: (state, action: PayloadAction<Applications>) => {
+      const { id, company, position } = action.payload;
+      const existingApplication = state.find(
+        (eachApplication) => eachApplication.id === id
+      );
+      if (existingApplication) {
+        existingApplication.company = company;
+        existingApplication.position = position;
+      }
+    },
   },
 });
 
 export const { applicationAdded } = applicationsSlice.actions;
+
+const selectApplications = (state: RootState) => state.applications;
+export { selectApplications };
 
 const applicationsReducer = applicationsSlice.reducer;
 export default applicationsReducer;
